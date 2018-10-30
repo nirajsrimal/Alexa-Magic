@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 from flask import Flask
 from flask_ask import Ask, statement, question, session
-import math
 import requests
 
 
@@ -30,10 +29,9 @@ def start_skill():
 
 @ask.intent("NumberIntent",convert = {"num" : int})
 def number_intent(num):
-    ans = isMagic(num)
-	if ans:
+	if isMagic(num):
 		return statement("Yes")
-	else: 
+	else:
 		return statement("No")
 
 @ask.intent("NoIntent")
