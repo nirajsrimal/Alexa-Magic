@@ -30,11 +30,9 @@ def start_skill():
 @ask.intent("NumberIntent",convert = {"num" : int})
 def number_intent(num):
 	if isMagic(num):
-		message = "Yes, " + str(num) + " is a Magic Number" 
-        return statement(message)
-    else:
-        message = "No, " + str(num) + " is not a Magic Number" 
-        return statement(message)
+		return statement("Yes")
+	else:
+		return statement("No")
 
 @ask.intent("NoIntent")
 def no_Intent():
